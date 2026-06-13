@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本 · Roteiro Japão 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   CUSTOM PROPERTIES — Sanzo Wada #232 + #243 + #279
+   ============================================= */
+:root {
+  /* Wada palette */
+  --c-indigo:    #000831;   /* Deep Indigo — sidebar */
+  --c-carmine:   #D60036;   /* Carmine — accent vermelho */
+  --c-cinnamon:  #F2AD78;   /* Pinkish Cinnamon — warm highlight */
+  --c-ivory:     #EBD999;   /* Ivory Buff — Osaka tag */
+  --c-slate:     #1B3644;   /* Slate Color — Fuji/dark tag */
+  --c-sienna:    #B85E00;   /* Raw Sienna — Kawaguchiko */
+
+  /* Surfaces */
+  --bg:          #FAF5EB;
+  --bg-alt:      #F2EAD6;
+  --card:        #FFFFFF;
+
+  /* Text */
+  --ink:         #1C1510;
+  --ink-2:       #7A6D5F;
+  --ink-3:       #8A7C6E;   /* raised for WCAG AA ≈ 4.5:1 on bg */
+  --on-dark:     #FAF5EB;
+
+  /* Dividers */
+  --line:        #EAE0CC;
+
+  /* Layout */
+  --sidebar-w:   264px;
+
+  /* Type */
+  --serif:  'Shippori Mincho', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'Space Mono', monospace;
+
+  --r:    8px;
+  --r-lg: 16px;
+}
+
+/* =============================================
+   RESET
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+button { cursor: pointer; font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* =============================================
+   SIDEBAR
+   ============================================= */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--c-indigo);
+  color: var(--on-dark);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+  transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+}
+.sidebar::-webkit-scrollbar { width: 0; }
+
+.s-logo {
+  padding: 28px 24px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+  overflow: hidden;
+}
+.s-logo::before {
+  content: '日本';
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s-logo-main {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--c-cinnamon);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.s-logo-sub {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,245,235,0.62);
+  margin-top: 7px;
+}
+
+.s-countdown {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.s-countdown-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250,245,235,0.62);
+  margin-bottom: 6px;
+}
+.s-countdown-n {
+  font-family: var(--mono);
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--c-carmine);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.s-countdown-unit {
+  font-size: 11px;
+  color: rgba(250,245,235,0.62);
+  margin-top: 3px;
+}
+.s-progress {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+.s-progress-fill {
+  height: 100%;
+  background: var(--c-carmine);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.s-meta {
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.s-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.s-meta-row .ml { font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,245,235,0.60); }
+.s-meta-row .mv { font-family: var(--mono); font-size: 10px; color: var(--c-cinnamon); }
+
+.s-nav { flex: 1; padding: 14px 0; }
+.s-nav-section {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250,245,235,0.55);
+  padding: 10px 24px 5px;
+}
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 24px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(250,245,235,0.55);
+  transition: all 0.14s;
+  border: none;
+  border-left: 2.5px solid transparent;
+  background: none;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.nav-btn:hover {
+  color: var(--on-dark);
+  background: rgba(255,255,255,0.04);
+}
+.nav-btn.active {
+  color: var(--on-dark);
+  background: rgba(214,0,54,0.1);
+  border-left-color: var(--c-carmine);
+}
+.nav-icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
+.nav-count {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 9px;
+  background: rgba(255,255,255,0.10);
+  color: rgba(250,245,235,0.60);
+  border-radius: 8px;
+  padding: 1px 7px;
+}
+
+.s-footer {
+  padding: 18px 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.s-footer-cities {
+  font-family: var(--serif);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: rgba(250,245,235,0.42);
+  line-height: 1.8;
+}
+
+/* =============================================
+   MAIN
+   ============================================= */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* =============================================
+   TOPBAR
+   ============================================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 0 40px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.topbar-left { display: flex; align-items: center; gap: 12px; }
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--ink);
+  padding: 6px;
+  border-radius: var(--r);
+}
+.topbar-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--c-carmine);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.12s;
+}
+.btn-add:hover { background: #b50030; }
+.btn-add .plus { font-size: 17px; font-weight: 300; line-height: 1; }
+.btn-add .btn-label { }
+
+/* =============================================
+   FILTER BAR
+   ============================================= */
+.filter-bar {
+  padding: 13px 40px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--bg);
+}
+.filter-bar-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-right: 4px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  border-radius: 20px;
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.chip:hover, .chip.active {
+  background: var(--c-indigo);
+  color: var(--on-dark);
+  border-color: var(--c-indigo);
+}
+
+/* =============================================
+   TAGS
+   ============================================= */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  border-radius: 20px;
+  padding: 2.5px 9px;
+  white-space: nowrap;
+  line-height: 1;
+}
+/* city tags — Wada colors */
+.tag-tokyo     { background: var(--c-cinnamon); color: var(--c-indigo); }
+.tag-fuji      { background: var(--c-slate); color: var(--on-dark); }
+.tag-kyoto     { background: var(--c-carmine); color: #fff; }
+.tag-osaka     { background: var(--c-ivory); color: var(--c-indigo); }
+.tag-kawaguchiko { background: var(--c-sienna); color: #fff; }
+
+/* category tags */
+.tag-restaurante { background: #F8EFE4; color: #7A4A10; border: 1px solid #EDD8B8; }
+.tag-cafe        { background: #F2EBE0; color: #6B4E2A; border: 1px solid #E0CEBC; }
+.tag-museu       { background: #E5ECF4; color: #1B3644; border: 1px solid #C8D8E8; }
+.tag-bairro      { background: #EBF0EC; color: #2A4A30; border: 1px solid #C8DACC; }
+.tag-compra      { background: #FCE8EE; color: #A00028; border: 1px solid #F0C4D0; }
+.tag-natureza    { background: #EBF4E8; color: #2A5E1C; border: 1px solid #C4DCBC; }
+.tag-templo      { background: #F5EFE0; color: #7A5800; border: 1px solid #E8D8A8; }
+.tag-musica      { background: #EDE8F8; color: #4A2E9C; border: 1px solid #D0C4EC; }
+
+/* =============================================
+   CONTENT AREA
+   ============================================= */
+.content {
+  padding: 32px 40px 48px;
+  flex: 1;
+}
+.view { display: none; }
+.view.active { display: block; }
+
+/* =============================================
+   SECTION HEADER
+   ============================================= */
+.sec-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+.sec-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+.sec-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  margin-top: 6px;
+}
+
+/* =============================================
+   CRONOGRAMA — TIMELINE
+   ============================================= */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: var(--line);
+}
+
+.day-block {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 0 24px;
+  padding-bottom: 36px;
+  position: relative;
+}
+.day-block:last-child { padding-bottom: 0; }
+
+.day-stamp { display: flex; flex-direction: column; align-items: center; z-index: 1; }
+.day-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--c-carmine);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.day-circle.special { background: var(--c-carmine); border-color: var(--c-carmine); }
+.day-n {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-carmine);
+  line-height: 1;
+}
+.day-circle.special .day-n { color: #fff; }
+.day-k {
+  font-family: var(--serif);
+  font-size: 8px;
+  color: var(--c-carmine);
+  opacity: 0.65;
+  line-height: 1;
+  margin-top: 1px;
+}
+.day-circle.special .day-k { color: rgba(255,255,255,0.65); }
+
+.day-content { padding-top: 8px; }
+.day-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  flex-wrap: wrap;
+}
+.day-date {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+}
+.day-sublabel {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+}
+.day-city { margin-left: auto; }
+
+.day-items { display: flex; flex-direction: column; gap: 7px; }
+
+.day-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 11px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.day-item:hover {
+  border-color: rgba(214,0,54,0.4);
+  box-shadow: 0 2px 14px rgba(0,8,49,0.06);
+}
+.day-item-ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+.day-item-body { flex: 1; min-width: 0; }
+.day-item-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.35;
+}
+.day-item-jp {
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-top: 1px;
+}
+.day-item-note {
+  font-size: 12px;
+  color: var(--ink-2);
+  margin-top: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+.day-item-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.day-item-star { flex-shrink: 0; font-size: 13px; align-self: flex-start; margin-top: 2px; }
+
+.day-note-placeholder {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  line-height: 1.5;
+  padding: 4px 0;
+  font-style: italic;
+}
+
+.day-add {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 7px;
+  padding: 8px 14px;
+  background: none;
+  border: 1px dashed var(--line);
+  border-radius: var(--r);
+  font-size: 12px;
+  color: var(--ink-3);
+  transition: all 0.14s;
+  width: 100%;
+}
+.day-add:hover {
+  border-color: var(--c-carmine);
+  color: var(--c-carmine);
+  background: rgba(214,0,54,0.025);
+}
+
+/* =============================================
+   CARD GRID
+   ============================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 15px;
+}
+
+.place-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.place-card:hover {
+  border-color: rgba(0,8,49,0.14);
+  box-shadow: 0 8px 30px rgba(0,8,49,0.09);
+  transform: translateY(-2px);
+}
+
+.card-thumb {
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 52px;
+  opacity: 1;
+}
+.card-thumb .thumb-bg-emoji {
+  opacity: 0.40;
+  font-size: 58px;
+}
+.card-thumb-tags {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  display: flex;
+  gap: 5px;
+}
+
+.card-body {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card-name {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.card-jp {
+  font-family: var(--serif);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+.card-note {
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin-top: 5px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  padding: 9px 16px 13px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-price {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 10px;
+  background: var(--bg-alt);
+  color: var(--ink-2);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+/* =============================================
+   COMPRAS — CHECKLIST
+   ============================================= */
+.shop-section { margin-bottom: 30px; }
+.shop-section-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.shop-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.checklist { display: flex; flex-direction: column; gap: 5px; }
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--card);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+}
+.check-item:hover { border-color: var(--c-cinnamon); }
+.check-item.done { opacity: 0.45; }
+.check-item.done .check-name { text-decoration: line-through; }
+
+.check-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid var(--line);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  transition: all 0.12s;
+}
+.check-item.done .check-box {
+  background: var(--c-carmine);
+  border-color: var(--c-carmine);
+}
+.check-name { font-size: 13.5px; flex: 1; }
+.check-sub {
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-top: 2px;
+}
+.check-store {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   BOOKINGS
+   ============================================= */
+.booking-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  padding: 20px 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 11px;
+}
+.booking-ico { font-size: 28px; flex-shrink: 0; }
+.booking-body { flex: 1; min-width: 0; }
+.booking-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.booking-sub { font-size: 12.5px; color: var(--ink-2); margin-bottom: 11px; }
+.booking-metas {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.booking-meta-item .bml {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+.booking-meta-item .bmv {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.booking-conf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-alt);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.booking-conf .bc-label {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.booking-conf .bc-code {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.booking-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+/* status derived from Wada slate (confirmed) and sienna (pending) */
+.booking-dot.confirmed { background: #4A9070; box-shadow: 0 0 0 3px rgba(74,144,112,0.18); }
+.booking-dot.pending   { background: var(--c-sienna); box-shadow: 0 0 0 3px rgba(184,94,0,0.18); }
+
+/* =============================================
+   MODAL
+   ============================================= */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,8,49,0.52);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.overlay.open { display: flex; }
+
+.modal {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,8,49,0.28);
+  display: flex;
+  flex-direction: column;
+}
+.modal::-webkit-scrollbar { width: 4px; }
+.modal::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+.modal-head {
+  padding: 22px 26px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  z-index: 1;
+}
+.modal-title { font-family: var(--serif); font-size: 19px; font-weight: 700; }
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--ink-2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r);
+  transition: background 0.1s;
+  flex-shrink: 0;
+}
+.modal-close:hover { background: var(--bg-alt); }
+
+.modal-body {
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.fg-label {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.fg input, .fg select, .fg textarea {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 9px 12px;
+  transition: border-color 0.12s;
+  width: 100%;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  outline: none;
+  border-color: var(--c-carmine);
+}
+.fg textarea { resize: vertical; min-height: 78px; }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+
+.type-picker {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.type-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--line);
+  background: none;
+  cursor: pointer;
+  transition: all 0.12s;
+  flex: 1;
+  min-width: 60px;
+}
+.type-opt-ico { font-size: 19px; }
+.type-opt-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.07em; color: var(--ink-2); }
+.type-opt:hover, .type-opt.sel {
+  border-color: var(--c-carmine);
+  background: rgba(214,0,54,0.04);
+}
+.type-opt.sel .type-opt-lbl { color: var(--c-carmine); }
+
+.modal-foot {
+  padding: 14px 26px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 9px;
+  justify-content: flex-end;
+}
+.btn-sec {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: all 0.12s;
+}
+.btn-sec:hover { border-color: var(--ink-2); }
+.btn-pri {
+  background: var(--c-carmine);
+  border: none;
+  border-radius: var(--r);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  transition: background 0.12s;
+}
+.btn-pri:hover { background: #b50030; }
+
+/* =============================================
+   DETAIL MODAL
+   ============================================= */
+.detail-hero {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  position: relative;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+}
+.detail-hero-tags {
+  position: absolute;
+  bottom: 12px;
+  left: 18px;
+  display: flex;
+  gap: 5px;
+}
+.detail-body { padding: 22px 26px 4px; }
+.detail-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.detail-jp { font-family: var(--serif); font-size: 13px; color: var(--ink-3); margin-bottom: 14px; }
+.detail-note { font-size: 13.5px; color: var(--ink-2); line-height: 1.65; margin-bottom: 18px; }
+.detail-metas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.detail-meta-cell {
+  background: var(--bg);
+  border-radius: var(--r);
+  padding: 9px 11px;
+}
+.dmc-l { font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+.dmc-v { font-size: 12.5px; font-weight: 500; color: var(--ink); }
+
+/* =============================================
+   PHOTO UPLOAD
+   ============================================= */
+.photo-area {
+  border: 1.5px dashed var(--line);
+  border-radius: var(--r);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: border-color 0.14s;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+.photo-area:hover { border-color: var(--c-carmine); }
+.photo-area input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.photo-area-ico { font-size: 22px; opacity: 0.35; }
+.photo-area-hint {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  text-align: center;
+}
+.photo-preview-wrap {
+  width: 100%;
+  height: 130px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-preview-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-clear {
+  position: absolute;
+  top: 6px; right: 6px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px; height: 22px;
+  font-size: 11px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.photo-clear:hover { background: rgba(214,0,54,0.85); }
+
+/* Card thumb image */
+.card-thumb { position: relative; overflow: hidden; }
+.card-thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.card-thumb .card-thumb-tags { z-index: 2; }
+
+/* Detail hero image */
+.detail-hero { overflow: hidden; }
+.detail-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  z-index: 0;
+}
+.detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,8,49,0.55) 0%, rgba(0,8,49,0.1) 60%, transparent 100%);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  z-index: 1;
+}
+.detail-hero > span, .detail-hero > div { position: relative; z-index: 2; }
+
+/* Btn danger */
+.btn-danger {
+  background: none;
+  border: 1px solid #FACDD5;
+  border-radius: var(--r);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-carmine);
+  transition: all 0.12s;
+  margin-right: auto;
+}
+.btn-danger:hover { background: #FFF0F3; border-color: var(--c-carmine); }
+
+/* =============================================
+   FAB + BOTTOM NAV
+   ============================================= */
+.fab {
+  display: none;
+  position: fixed;
+  bottom: 72px;
+  right: 18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--c-carmine);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  box-shadow: 0 4px 18px rgba(214,0,54,0.35);
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: all 0.15s;
+}
+.fab:hover { transform: scale(1.06); background: #b50030; }
+
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--c-indigo);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  height: 58px;
+  z-index: 100;
+  align-items: stretch;
+}
+.bnav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  color: rgba(250,245,235,0.4);
+  cursor: pointer;
+  transition: color 0.12s;
+  padding: 5px 4px 8px;
+}
+.bnav-item .bi { font-size: 18px; }
+.bnav-item .bl { font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.04em; }
+.bnav-item.active { color: var(--c-carmine); }
+
+/* =============================================
+   OVERLAY (mobile sidebar backdrop)
+   ============================================= */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,8,49,0.45);
+  z-index: 90;
+}
+.sidebar-overlay.open { display: block; }
+
+/* =============================================
+   EMPTY STATE
+   ============================================= */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  grid-column: 1 / -1;
+}
+.empty .ei { font-size: 44px; opacity: 0.2; margin-bottom: 10px; }
+.empty .et { font-family: var(--serif); font-size: 17px; color: var(--ink-3); }
+
+/* =============================================
+   TOAST
+   ============================================= */
+.toast {
+  position: fixed;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--c-indigo);
+  color: var(--on-dark);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  padding: 9px 20px;
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 999;
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; }
+
+/* =============================================
+   MOBILE TRIP BAR
+   ============================================= */
+.mobile-trip-bar {
+  display: none;
+  background: var(--c-indigo);
+  color: var(--on-dark);
+  padding: 10px 18px;
+  gap: 0;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.mtb-countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  padding-right: 16px;
+  flex-shrink: 0;
+}
+.mtb-n {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c-carmine);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.mtb-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: rgba(250,245,235,0.62);
+  letter-spacing: 0.08em;
+}
+.mtb-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 16px 0 0;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.mtb-flights {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+.mtb-flight {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.mtb-fl-label {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250,245,235,0.60);
+  min-width: 30px;
+}
+.mtb-fl-val {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--c-cinnamon);
+  font-weight: 700;
+}
+
+/* =============================================
+   CHECKLIST — split tap zones
+   ============================================= */
+.check-item {
+  cursor: default;
+}
+.check-item:hover { border-color: var(--c-cinnamon); }
+.check-tap-name {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.check-tap-name:hover .check-name { color: var(--c-carmine); }
+.check-box-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  margin: -6px;
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 36px;
+  min-height: 36px;
+}
+.check-box-btn:focus-visible { outline: 2px solid var(--c-carmine); outline-offset: 2px; }
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.view.active { animation: fadeUp 0.22s ease both; }
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 40px rgba(0,0,0,0.3);
+  }
+  .main { margin-left: 0; }
+  .topbar { padding: 0 18px; height: 56px; }
+  .mobile-trip-bar { display: flex; }
+  .filter-bar { padding: 11px 18px; }
+  .content { padding: 22px 18px 80px; }
+  .bottom-nav { display: flex; }
+  .fab { display: flex; }
+  .menu-btn { display: block; }
+  .btn-label { display: none; }
+  .card-grid { grid-template-columns: 1fr; }
+  .fg-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .day-block { grid-template-columns: 50px 1fr; gap: 0 14px; }
+  .timeline::before { left: 25px; }
+  .booking-card { flex-direction: column; gap: 10px; }
+  .detail-metas { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile sidebar backdrop -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- =============================================
+     SIDEBAR
+     ============================================= -->
+<aside class="sidebar" id="sidebar">
+
+  <div class="s-logo">
+    <div class="s-logo-main">日本</div>
+    <div class="s-logo-sub">Roteiro · Setembro 2026</div>
+  </div>
+
+  <div class="s-countdown">
+    <div class="s-countdown-label">Faltam</div>
+    <div class="s-countdown-n" id="cdDays">—</div>
+    <div class="s-countdown-unit" id="cdUnit">dias para a viagem</div>
+    <div class="s-progress">
+      <div class="s-progress-fill" id="cdProgress" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="s-meta">
+    <div class="s-meta-row">
+      <span class="ml">Partida</span>
+      <span class="mv">06 Set · GRU</span>
+    </div>
+    <div class="s-meta-row">
+      <span class="ml">Retorno</span>
+      <span class="mv">21 Set · NRT</span>
+    </div>
+    <div class="s-meta-row">
+      <span class="ml">Voo ida</span>
+      <span class="mv">EK312</span>
+    </div>
+    <div class="s-meta-row">
+      <span class="ml">Voo volta</span>
+      <span class="mv">EK319</span>
+    </div>
+    <div class="s-meta-row">
+      <span class="ml">Duração</span>
+      <span class="mv">15 dias</span>
+    </div>
+  </div>
+
+  <nav class="s-nav">
+    <div class="s-nav-section">Navegação</div>
+    <button class="nav-btn active" data-view="cronograma" onclick="goView('cronograma',this)">
+      <span class="nav-icon">📅</span>
+      <span>Cronograma</span>
+      <span class="nav-count">15</span>
+    </button>
+    <button class="nav-btn" data-view="lugares" onclick="goView('lugares',this)">
+      <span class="nav-icon">📍</span>
+      <span>Lugares</span>
+      <span class="nav-count" id="nc-lugares">—</span>
+    </button>
+    <button class="nav-btn" data-view="gastronomia" onclick="goView('gastronomia',this)">
+      <span class="nav-icon">🍜</span>
+      <span>Gastronomia</span>
+      <span class="nav-count" id="nc-gastro">—</span>
+    </button>
+    <button class="nav-btn" data-view="compras" onclick="goView('compras',this)">
+      <span class="nav-icon">🛍</span>
+      <span>Compras</span>
+      <span class="nav-count" id="nc-compras">—</span>
+    </button>
+    <button class="nav-btn" data-view="bookings" onclick="goView('bookings',this)">
+      <span class="nav-icon">✅</span>
+      <span>Confirmados</span>
+      <span class="nav-count">5</span>
+    </button>
+  </nav>
+
+  <div class="s-footer">
+    <div class="s-footer-cities">東京 · 富士山 · 河口湖 · 京都 · 大阪</div>
+  </div>
+
+</aside>
+
+<!-- =============================================
+     MAIN
+     ============================================= -->
+<main class="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title" id="topbarTitle">Cronograma</span>
+    </div>
+    <button class="btn-add" onclick="openAdd()">
+      <span class="plus">+</span>
+      <span class="btn-label">Adicionar</span>
+    </button>
+  </header>
+
+  <!-- MOBILE TRIP BAR — persistent countdown + flight info (hidden on desktop) -->
+  <div class="mobile-trip-bar" id="mobileTripBar">
+    <div class="mtb-countdown">
+      <span class="mtb-n" id="mtbDays">—</span>
+      <span class="mtb-label">dias</span>
+    </div>
+    <div class="mtb-divider"></div>
+    <div class="mtb-flights">
+      <div class="mtb-flight">
+        <span class="mtb-fl-label">Ida</span>
+        <span class="mtb-fl-val">EK312 · 06 Set</span>
+      </div>
+      <div class="mtb-flight">
+        <span class="mtb-fl-label">Volta</span>
+        <span class="mtb-fl-val">EK319 · 21 Set</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="filterBar" style="display:none">
+    <span class="filter-bar-label">Cidade</span>
+    <button class="chip active" onclick="setFilter(this,'all')">Todas</button>
+    <button class="chip" onclick="setFilter(this,'tokyo')">Tokyo</button>
+    <button class="chip" onclick="setFilter(this,'fuji')">Fuji</button>
+    <button class="chip" onclick="setFilter(this,'kawaguchiko')">Kawaguchiko</button>
+    <button class="chip" onclick="setFilter(this,'kyoto')">Kyoto</button>
+    <button class="chip" onclick="setFilter(this,'osaka')">Osaka</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- CRONOGRAMA -->
+    <div class="view active" id="view-cronograma">
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <!-- LUGARES -->
+    <div class="view" id="view-lugares">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Lugares</div>
+          <div class="sec-count"><span id="cnt-l">0</span> locais salvos</div>
+        </div>
+      </div>
+      <div class="card-grid" id="grid-lugares"></div>
+    </div>
+
+    <!-- GASTRONOMIA -->
+    <div class="view" id="view-gastronomia">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Gastronomia</div>
+          <div class="sec-count"><span id="cnt-g">0</span> restaurantes &amp; cafés</div>
+        </div>
+      </div>
+      <div class="card-grid" id="grid-gastro"></div>
+    </div>
+
+    <!-- COMPRAS -->
+    <div class="view" id="view-compras">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Compras</div>
+          <div class="sec-count">Lista de shopping · Tax Free</div>
+        </div>
+      </div>
+      <div id="compras-body"></div>
+    </div>
+
+    <!-- BOOKINGS -->
+    <div class="view" id="view-bookings">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Confirmados</div>
+          <div class="sec-count">Reservas, voos e ingressos</div>
+        </div>
+      </div>
+      <div id="bookings-body"></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FAB mobile -->
+<button class="fab" onclick="openAdd()">+</button>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="bnav-item active" data-view="cronograma" onclick="goView('cronograma',this)">
+    <span class="bi">📅</span><span class="bl">Dias</span>
+  </button>
+  <button class="bnav-item" data-view="lugares" onclick="goView('lugares',this)">
+    <span class="bi">📍</span><span class="bl">Lugares</span>
+  </button>
+  <button class="bnav-item" data-view="gastronomia" onclick="goView('gastronomia',this)">
+    <span class="bi">🍜</span><span class="bl">Comida</span>
+  </button>
+  <button class="bnav-item" data-view="compras" onclick="goView('compras',this)">
+    <span class="bi">🛍</span><span class="bl">Compras</span>
+  </button>
+  <button class="bnav-item" data-view="bookings" onclick="goView('bookings',this)">
+    <span class="bi">✅</span><span class="bl">Docs</span>
+  </button>
+</nav>
+
+<!-- =============================================
+     ADD MODAL
+     ============================================= -->
+<div class="overlay" id="addOverlay" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title" id="addModalTitle">Adicionar item</span>
+      <button class="modal-close" onclick="closeAdd()" aria-label="Fechar modal">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="fg">
+        <div class="fg-label">Tipo</div>
+        <div class="type-picker">
+          <button class="type-opt sel" data-type="lugar" onclick="pickType(this)">
+            <span class="type-opt-ico">📍</span>
+            <span class="type-opt-lbl">Lugar</span>
+          </button>
+          <button class="type-opt" data-type="restaurante" onclick="pickType(this)">
+            <span class="type-opt-ico">🍜</span>
+            <span class="type-opt-lbl">Rest.</span>
+          </button>
+          <button class="type-opt" data-type="cafe" onclick="pickType(this)">
+            <span class="type-opt-ico">☕</span>
+            <span class="type-opt-lbl">Café</span>
+          </button>
+          <button class="type-opt" data-type="compra" onclick="pickType(this)">
+            <span class="type-opt-ico">🛍</span>
+            <span class="type-opt-lbl">Compra</span>
+          </button>
+          <button class="type-opt" data-type="evento" onclick="pickType(this)">
+            <span class="type-opt-ico">🎌</span>
+            <span class="type-opt-lbl">Evento</span>
+          </button>
+          <button class="type-opt" data-type="museu" onclick="pickType(this)">
+            <span class="type-opt-ico">🏛️</span>
+            <span class="type-opt-lbl">Museu</span>
+          </button>
+          <button class="type-opt" data-type="templo" onclick="pickType(this)">
+            <span class="type-opt-ico">⛩️</span>
+            <span class="type-opt-lbl">Templo</span>
+          </button>
+          <button class="type-opt" data-type="bar" onclick="pickType(this)">
+            <span class="type-opt-ico">🍺</span>
+            <span class="type-opt-lbl">Bar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="fg-row">
+        <div class="fg">
+          <label class="fg-label">Nome</label>
+          <input id="f-name" type="text" placeholder="Ex: Shibuya Crossing">
+        </div>
+        <div class="fg">
+          <label class="fg-label">Nome em japonês</label>
+          <input id="f-jp" type="text" placeholder="Ex: 渋谷スクランブル交差点">
+        </div>
+      </div>
+
+      <div class="fg-row">
+        <div class="fg">
+          <label class="fg-label">Cidade</label>
+          <select id="f-city">
+            <option value="tokyo">Tokyo</option>
+            <option value="fuji">Monte Fuji</option>
+            <option value="kawaguchiko">Kawaguchiko</option>
+            <option value="kyoto">Kyoto</option>
+            <option value="osaka">Osaka</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label class="fg-label">Dia da viagem</label>
+          <select id="f-day">
+            <option value="">— Sem dia definido</option>
+            <option value="1">Dia 1 — 06 Set (chegada)</option>
+            <option value="2">Dia 2 — 07 Set (Tokyo I)</option>
+            <option value="3">Dia 3 — 08 Set (Fuji subida)</option>
+            <option value="4">Dia 4 — 09 Set (Fuji cume)</option>
+            <option value="5">Dia 5 — 10 Set (Kawaguchiko)</option>
+            <option value="6">Dia 6 — 11 Set (Tokyo II)</option>
+            <option value="7">Dia 7 — 12 Set (Shimokitazawa)</option>
+            <option value="8">Dia 8 — 13 Set (Nakameguro)</option>
+            <option value="9">Dia 9 — 14 Set (Kyoto)</option>
+            <option value="10">Dia 10 — 15 Set (Kyoto)</option>
+            <option value="11">Dia 11 — 16 Set (Kyoto)</option>
+            <option value="12">Dia 12 — 17 Set (Osaka)</option>
+            <option value="13">Dia 13 — 18 Set (Tokyo III)</option>
+            <option value="14">Dia 14 — 19 Set (Map Camera)</option>
+            <option value="15">Dia 15 — 20 Set (partida)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label class="fg-label">Notas</label>
+        <textarea id="f-note" placeholder="Dicas, horários, links, o que não perder..."></textarea>
+      </div>
+
+      <div class="fg-row">
+        <div class="fg">
+          <label class="fg-label">Endereço / Bairro</label>
+          <input id="f-addr" type="text" placeholder="Ex: Shinjuku, Tokyo">
+        </div>
+        <div class="fg">
+          <label class="fg-label">Faixa de preço</label>
+          <select id="f-price">
+            <option value="">—</option>
+            <option value="free">Free 🟢</option>
+            <option value="low">¥ Barato</option>
+            <option value="mid">¥¥ Médio</option>
+            <option value="high">¥¥¥ Caro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label class="fg-label">Foto</label>
+        <div class="photo-area" id="photoArea">
+          <input type="file" id="f-photo-file" accept="image/*" onchange="handlePhotoFile(this)">
+          <div id="photoPreviewWrap" style="display:none;width:100%">
+            <div class="photo-preview-wrap">
+              <img id="photoPreviewImg" src="" alt="">
+              <button class="photo-clear" onclick="clearPhoto(event)">✕</button>
+            </div>
+          </div>
+          <div id="photoAreaDefault">
+            <span class="photo-area-ico">🖼</span>
+            <span class="photo-area-hint">Clique para upload · ou cole uma URL abaixo</span>
+          </div>
+        </div>
+        <input id="f-photo-url" type="text" placeholder="Ou cole uma URL de imagem..." style="margin-top:6px" oninput="handlePhotoUrl(this.value)">
+      </div>
+
+      <div class="fg">
+        <label class="fg-label">Tags (separadas por vírgula)</label>
+        <input id="f-tags" type="text" placeholder="vintage, imperdível, foto, vinyl...">
+      </div>
+
+    </div>
+    <div class="modal-foot">
+      <button class="btn-sec" onclick="closeAdd()">Cancelar</button>
+      <button class="btn-pri" id="saveBtn" onclick="saveItem()">Salvar item</button>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     DETAIL MODAL
+     ============================================= -->
+<div class="overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="dm-name">
+  <div class="modal">
+    <div class="detail-hero" id="dm-hero">
+      <span id="dm-ico" style="font-size:60px">📍</span>
+      <div class="detail-hero-tags" id="dm-hero-tags"></div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-name" id="dm-name"></div>
+      <div class="detail-jp" id="dm-jp"></div>
+      <div class="detail-note" id="dm-note"></div>
+      <div class="detail-metas" id="dm-metas"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-danger" onclick="deleteItem()">Deletar</button>
+      <button class="btn-sec" onclick="closeDetail()">Fechar</button>
+      <button class="btn-pri" onclick="editItem()">Editar</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- =============================================
+     SCRIPT
+     ============================================= -->
+<script>
+/* ── CONSTANTS ──────────────────────────────── */
+const TRIP_DATE   = new Date('2026-09-06T00:00:00');
+const TRIP_END    = new Date('2026-09-21T23:59:59');
+const SAVE_KEY    = 'japan26-v2-items';
+
+const DAYS = [
+  { n:1,  date:'06/09', label:'Chegada',       city:'tokyo',       special:false, jp:'到着',  note:'Voo EK312. Haneda → hotel. Passeio leve por Shinjuku à noite.' },
+  { n:2,  date:'07/09', label:'Tokyo I — Gear', city:'tokyo',      special:false, jp:'東京',  note:'Montbell, Yodobashi, Workman. Compras de equipamento para o Fuji.' },
+  { n:3,  date:'08/09', label:'Fuji — Subida',  city:'fuji',       special:true,  jp:'富士山', note:'Yoshida Trail. Início da subida. Dormitório Kamaiwakan.' },
+  { n:4,  date:'09/09', label:'Fuji — Cume',    city:'fuji',       special:true,  jp:'頂上',  note:'Cume ao amanhecer (ご来光). Descida pelo Yoshida Trail.' },
+  { n:5,  date:'10/09', label:'Kawaguchiko',     city:'kawaguchiko',special:false, jp:'河口湖', note:'Descanso à beira do lago. Vista do Fuji-san. Onsen.' },
+  { n:6,  date:'11/09', label:'Tokyo II',        city:'tokyo',      special:false, jp:'東京',  note:'Shibuya, Harajuku. Compras de roupas e streetwear japonês.' },
+  { n:7,  date:'12/09', label:'Shimokitazawa',   city:'tokyo',      special:false, jp:'下北沢', note:'Lojas vintage, vinil, brechós. Jantar no bairro.' },
+  { n:8,  date:'13/09', label:'Nakameguro',      city:'tokyo',      special:false, jp:'中目黒', note:'Nakameguro, Daikanyama T-Site. Cafés especiais.' },
+  { n:9,  date:'14/09', label:'Kyoto I',         city:'kyoto',      special:false, jp:'京都',  note:'Shinkansen de manhã. Fushimi Inari à tarde.' },
+  { n:10, date:'15/09', label:'Kyoto II',        city:'kyoto',      special:false, jp:'京都',  note:'Arashiyama, Bamboo Grove, Ryoan-ji.' },
+  { n:11, date:'16/09', label:'Kyoto III',       city:'kyoto',      special:false, jp:'京都',  note:'Gion, Nishiki Market. Jantar ryokan.' },
+  { n:12, date:'17/09', label:'Osaka',           city:'osaka',      special:false, jp:'大阪',  note:'Dotonbori, Kuromon Market. Takoyaki e ramen.' },
+  { n:13, date:'18/09', label:'Tokyo III',       city:'tokyo',      special:false, jp:'東京',  note:'Akihabara, Kappabashi (utilidades de cozinha).' },
+  { n:14, date:'19/09', label:'Map Camera + Yanaka', city:'tokyo',  special:false, jp:'東京',  note:'Map Camera, Shinjuku. Yanaka. Tower Records — vinil.' },
+  { n:15, date:'20/09', label:'Partida',         city:'tokyo',      special:false, jp:'出発',  note:'Check-out. Transfer Narita. Voo EK319.' },
+];
+
+const EMOJI = { lugar:'📍', restaurante:'🍜', cafe:'☕', compra:'🛍', evento:'🎌', templo:'⛩️', museu:'🏛️', bar:'🍺' };
+const PRICE = { free:'Free', low:'¥', mid:'¥¥', high:'¥¥¥' };
+const CITY_NAME = { tokyo:'Tokyo', fuji:'Monte Fuji', kawaguchiko:'Kawaguchiko', kyoto:'Kyoto', osaka:'Osaka' };
+const CITY_TAG  = { tokyo:'tag-tokyo', fuji:'tag-fuji', kyoto:'tag-kyoto', osaka:'tag-osaka', kawaguchiko:'tag-kawaguchiko' };
+const CITY_BG   = { tokyo:'#F2AD781A', fuji:'#1B36441A', kyoto:'#D600361A', osaka:'#EBD9991A', kawaguchiko:'#B85E001A' };
+
+const TYPE_TAG = {
+  restaurante:'tag-restaurante', cafe:'tag-cafe', compra:'tag-compra',
+  lugar:'tag-bairro', evento:'tag-bairro', templo:'tag-templo', museu:'tag-museu', bar:'tag-cafe'
+};
+
+/* ── STATE ───────────────────────────────────── */
+let items = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null');
+let curView     = 'cronograma';
+let curType     = 'lugar';
+let curFilter   = 'all';
+let addDay      = null;
+let curDetailId = null;   // id do item aberto no detail modal
+let curEditId   = null;   // id do item sendo editado (null = novo item)
+let curPhoto    = null;   // base64 ou URL da foto pendente
+
+/* ── SEED DATA ───────────────────────────────── */
+if (!items) {
+  items = [
+    /* ── LUGARES ─────────────────────────────── */
+    { id:'l1',  type:'lugar',  name:'Shibuya Crossing',          jp:'渋谷スクランブル交差点', city:'tokyo',  day:'6',  note:'O cruzamento mais movimentado do mundo. Foto do alto do Starbucks (3º andar) ou Mag\'s Park. Melhor de noite.', addr:'Shibuya, Tokyo', price:'free', tags:['imperdível','foto'], star:true },
+    { id:'l2',  type:'lugar',  name:'Fushimi Inari-taisha',      jp:'伏見稲荷大社',           city:'kyoto',  day:'9',  note:'Mil torii vermelhos. Sair cedo — antes das 7h para evitar multidão. A trilha completa vai até a montanha: 2-3h.', addr:'Fushimi-ku, Kyoto', price:'free', tags:['templo','trilha','foto'], star:true },
+    { id:'l3',  type:'lugar',  name:'Shimokitazawa',              jp:'下北沢',                 city:'tokyo',  day:'7',  note:'Bairro bohêmio. Vintage shops, discos de vinil, cafés independentes, teatro underground. O Brooklyn de Tokyo.', addr:'Setagaya-ku, Tokyo', price:'', tags:['vintage','vinyl','compras'], star:true },
+    { id:'l4',  type:'lugar',  name:'Arashiyama',                 jp:'嵐山',                   city:'kyoto',  day:'10', note:'Bamboo Grove ao amanhecer. Sagano Scenic Railway opcional. Monkey Park Iwatayama nearby.', addr:'Ukyo-ku, Kyoto', price:'', tags:['natureza','foto','zen'], star:false },
+    { id:'l5',  type:'lugar',  name:'Dotonbori',                  jp:'道頓堀',                 city:'osaka',  day:'12', note:'Centro gastronômico de Osaka. Street food imperdível à noite — takoyaki, okonomiyaki. Glico Man!', addr:'Namba, Osaka', price:'', tags:['street food','noturno'], star:false },
+    { id:'l6',  type:'lugar',  name:'Daikanyama T-Site',          jp:'代官山 蔦屋書店',        city:'tokyo',  day:'8',  note:'Livraria/complexo cultural icônico. Café dentro. Piso superior: discos de vinil de jazz e world music.', addr:'Daikanyama, Tokyo', price:'', tags:['livros','vinyl','café'], star:true },
+    { id:'l7',  type:'lugar',  name:'Nakano Broadway',            jp:'中野ブロードウェイ',     city:'tokyo',  day:'13', note:'Meca do anime, manga e colecionáveis. Menos turístico que Akihabara. 4 andares de lojas Mandarake, figures, retrogames. Também: cosplay e odd vintage.', addr:'Nakano, Tokyo', price:'', tags:['anime','manga','retro','colecionáveis'], star:false },
+    { id:'l8',  type:'lugar',  name:'Kappabashi — Rua das Facas', jp:'かっぱ橋道具街',        city:'tokyo',  day:'13', note:'Rua inteira de lojas de utensílios de cozinha. Facas artesanais, cerâmicas, alimentos de plástico decorativos. Entre Ueno e Asakusa. Uma das compras mais únicas do Japão.', addr:'Kappabashi, Asakusa, Tokyo', price:'', tags:['cozinha','souvenir','facas','cerâmica'], star:true },
+    { id:'l9',  type:'lugar',  name:'Yanaka',                     jp:'谷中',                   city:'tokyo',  day:'14', note:'Bairro antigo preservado. Yanaka Ginza (shōtengai retrô), cemitério com gatos, templos, artesanato local. O Japão pré-moderno no meio de Tokyo.', addr:'Yanaka, Tokyo', price:'', tags:['tradicional','arquitetura','retrô','gatos'], star:false },
+    /* ── MUSEUS ──────────────────────────────── */
+    { id:'l10', type:'museu',  name:'Nintendo Museum',            jp:'任天堂ミュージアム',     city:'kyoto',  day:'10', note:'Museu oficial da Nintendo, aberto out/2024 em Uji (20min de trem de Kyoto). Ingressos por sorteio online — reservar MESES antes via nintendo.com/jp. Exibições interativas da história dos games e hardware original.', addr:'Uji, Kyoto', price:'mid', tags:['games','museu','nintendo','imperdível'], star:true },
+    /* ── EVENTOS ─────────────────────────────── */
+    { id:'e1',  type:'evento', name:'Evento de drift',            jp:'ドリフトイベント',       city:'tokyo',  day:'',   note:'Checar agenda em driftjapan.com e motorsport.jp para setembro. Circuitos: Fuji Speedway (Gotemba), Ebisu Circuit. Alguns eventos são abertos ao público com ingresso.', addr:'Fuji Speedway / Tokyo', price:'mid', tags:['automobilismo','drift','motor'], star:true },
+    { id:'e2',  type:'evento', name:'Passeio de drift (taxi)',    jp:'ドリフト体験',            city:'tokyo',  day:'',   note:'Drift taxi experience via GetYourGuide e Viator. Opções: Fuji Speedway Drift Taxi, Sodegaura Forest Raceway. Reservar com antecedência — esgotam rápido. Duração ~5-10 min por volta.', addr:'Fuji Speedway / Chiba', price:'mid', tags:['drift','experiência','GetYourGuide'], star:true },
+    /* ── GASTRONOMIA ─────────────────────────── */
+    { id:'g1',  type:'restaurante', name:'Ichiran Ramen',         jp:'一蘭',                   city:'tokyo',  day:'1',  note:'Ramen solo — cubículos individuais, sem interação social. Tonkotsu caldo de osso. Customizável: caldo, noodle, cebola.', addr:'Shinjuku ou Shibuya', price:'low', tags:['ramen','solo dining'], star:true },
+    { id:'g2',  type:'restaurante', name:'Nishiki Market',        jp:'錦市場',                 city:'kyoto',  day:'11', note:'"Cozinha de Kyoto" — mercado coberto de 5 quarteirões. Tofu fresco, pickles, wagashi, sake. Almoço-passeio.', addr:'Nakagyo-ku, Kyoto', price:'low', tags:['mercado','street food'], star:false },
+    { id:'g3',  type:'cafe',        name:'Onibus Coffee',         jp:'オニバスコーヒー',       city:'tokyo',  day:'8',  note:'Third wave japonês. Loja do Nakameguro (beira do canal) é a mais icônica. Single origins de qualidade.', addr:'Nakameguro, Tokyo', price:'low', tags:['specialty coffee','instagramável'], star:true },
+    { id:'g4',  type:'restaurante', name:'Kuromon Market',        jp:'黒門市場',               city:'osaka',  day:'12', note:'Mercado de frutos do mar frescos. Caranguejo, ouriço, wagyu. Para comer no balcão das bancas.', addr:'Namba, Osaka', price:'mid', tags:['frutos do mar','mercado'], star:false },
+    /* ── COMPRAS ─────────────────────────────── */
+    { id:'c1',  type:'compra', name:"Billy's Tokyo × Vans Loafer",         jp:'ビリーズ東京',              city:'tokyo', day:'2',  note:'Collab exclusiva japonesa. Verificar disponibilidade no site antes. Loja em Harajuku/Omotesando. Tax free.', addr:'Harajuku, Tokyo', price:'mid', tags:['exclusivo JP','tênis'], star:true },
+    { id:'c2',  type:'compra', name:'Tower Records — Vinil',                jp:'タワーレコード 渋谷',        city:'tokyo', day:'14', note:'Maior Tower Records do mundo — 9 andares. Andar JP indie e city pop. Procurar: Haruomi Hosono, Yellow Magic Orchestra, Happy End.', addr:'Shibuya, Tokyo', price:'', tags:['vinil','música'], star:true },
+    { id:'c3',  type:'compra', name:'Map Camera — câmera 3D/analógica',    jp:'マップカメラ',               city:'tokyo', day:'14', note:'Câmeras usadas e novas. Checar: Fujifilm FinePix Real 3D W3, RETO3D (wigglegram). Tax free com passaporte. Pedir para testar antes de comprar.', addr:'Shinjuku, Tokyo', price:'', tags:['câmera','analógico','tax free'], star:true },
+    { id:'c4',  type:'compra', name:'Montbell — Gear Fuji',                 jp:'モンベル',                  city:'tokyo', day:'2',  note:'Outdoor japonês top. Mochila, gaiters, bastões para o Fuji, meias de lã. Mais barato que no Brasil.', addr:'Shinjuku ou Shibuya', price:'high', tags:['outdoor','fuji prep'], star:false },
+    { id:'c5',  type:'compra', name:'GoPro — câmera Fuji',                  jp:'GoPro',                     city:'tokyo', day:'2',  note:'Para filmar a subida do Fuji. Comprar em Yodobashi (Shinjuku) ou BIC Camera. Tax free. Levar bateria extra — frio no cume drena rápido.', addr:'Shinjuku, Tokyo', price:'mid', tags:['câmera','fuji prep','tax free'], star:true },
+    { id:'c6',  type:'compra', name:'Onitsuka Tiger',                       jp:'オニツカタイガー',           city:'tokyo', day:'6',  note:'Loja flagship em Omotesando/Harajuku. Modelos exclusivos Japan-only. Tax free com passaporte.', addr:'Harajuku, Tokyo', price:'mid', tags:['tênis','exclusivo JP','tax free'], star:false },
+    { id:'c7',  type:'compra', name:'Wolverine 1000 Mile',                  jp:'ウルヴァリン',               city:'tokyo', day:'7',  note:'American workwear heritage — boa presença em Tokyo. Procurar em Shimokitazawa, Harajuku e lojas workwear japonesas (Hinoya, Hollywood Ranch Market). Pode sair mais barato que no Brasil.', addr:'Shimokitazawa / Harajuku', price:'high', tags:['botas','workwear','heritage'], star:false },
+    { id:'c8',  type:'compra', name:'PS5 Pro',                              jp:'プレイステーション5 Pro',    city:'tokyo', day:'13', note:'Yodobashi Akihabara ou BIC Camera Yurakucho. Verificar compatibilidade de tensão (100V JP vs 127V/220V BR) — usar transformador. Tax free. Checar restrições de voltagem na embalagem.', addr:'Akihabara, Tokyo', price:'high', tags:['eletrônico','games','tax free'], star:false },
+    { id:'c9',  type:'compra', name:'Faca japonesa (hocho)',                jp:'包丁',                       city:'tokyo', day:'13', note:'Kappabashi é o bairro das facas. Marcas: Masahiro, Global, Tojiro, Shun. Tipos: Santoku (all-purpose), Yanagiba (sashimi), Deba (peixe). Deve ir na mala despachada.', addr:'Kappabashi, Asakusa', price:'mid', tags:['cozinha','souvenir','artesanal'], star:true },
+    { id:'c10', type:'compra', name:'Song For The Mute × adidas Samba LX', jp:'アディダス サンバ',          city:'tokyo', day:'6',  note:'Collab australiana/adidas. Verificar disponibilidade em SELECT Tokyo, adidas Originals Harajuku ou Friezeit. Checar site antes — tamanhos limitados.', addr:'Harajuku / Omotesando', price:'mid', tags:['tênis','collab','streetwear'], star:true },
+    { id:'c11', type:'compra', name:'Uniqlo',                               jp:'ユニクロ',                   city:'tokyo', day:'6',  note:'Flagship de 12 andares em Ginza. Peças Japan-only: colaborações locais (UT), flanelas e LifeWear exclusivos. Tax free. Checar Uniqlo U e coleções especiais de temporada.', addr:'Ginza / Shinjuku', price:'low', tags:['roupas','exclusivo JP','tax free'], star:false },
+    { id:'c12', type:'compra', name:'Daruma',                               jp:'だるま',                     city:'kyoto', day:'9',  note:'Boneco símbolo de persistência japonesa. Comprar em lojas de souvenir perto de Fushimi Inari ou em templos de Tokyo. Pinta um olho ao fazer o desejo — o outro quando realizar.', addr:'Fushimi Inari / Kyoto', price:'low', tags:['souvenir','cultura'], star:false },
+    { id:'c13', type:'compra', name:'iMac',                                 jp:'iMac',                       city:'tokyo', day:'13', note:'Apple Store Omotesando (flagship) ou Shinjuku. Preço em yen pode compensar com tax free (~8-10%). Verificar: AppleCare+ válida internacionalmente; teclado JP vs US; adaptador de voltagem.', addr:'Omotesando / Shinjuku', price:'high', tags:['eletrônico','apple','tax free'], star:false },
+    { id:'c14', type:'compra', name:'iPhone',                               jp:'iPhone',                     city:'tokyo', day:'13', note:'Apple Store Omotesando. Modelos japoneses têm obturador sonoro por lei — verificar se é desbloqueado para SIM brasileiro. Pode ser dual SIM (eSIM + físico). Tax free.', addr:'Omotesando, Tokyo', price:'high', tags:['eletrônico','apple','tax free'], star:false },
+    { id:'c15', type:'compra', name:'Dr. Martens',                         jp:'ドクターマーチン',           city:'tokyo', day:'6',  note:'Loja oficial em Harajuku ou Shinjuku. Pode ter colaborações japonesas exclusivas (MadeInEngland Japan-only). Tax free.', addr:'Harajuku / Shinjuku', price:'mid', tags:['calçado','streetwear'], star:false },
+    { id:'c16', type:'compra', name:'Roupas vintage — brechó',             jp:'古着屋',                     city:'tokyo', day:'7',  note:'Shimokitazawa é o epicentro: Chicago, Flamingo, Ragtag. Também: Koenji (mais barato, menos turístico). Buscar: Americana vintage, workwear japonês, peças de desfile descartadas.', addr:'Shimokitazawa / Koenji', price:'low', tags:['vintage','roupas','brechó'], star:true },
+    { id:'c17', type:'compra', name:'Yodobashi / BIC Camera',              jp:'ヨドバシカメラ',              city:'tokyo', day:'2',  note:'Para GoPro, cabos, baterias extras, adaptadores. Yodobashi Akiba (Akihabara) é o maior do mundo. Pontos de fidelidade + tax free. Ótimo para acessórios de câmera e eletrônicos em geral.', addr:'Akihabara / Shinjuku', price:'', tags:['eletrônico','câmera','tax free'], star:false },
+    { id:'c18', type:'compra', name:'Workman — gear barato',               jp:'ワークマン',                 city:'tokyo', day:'2',  note:'Workwear japonês ultrarresistente e barato. Ideal para layers na subida do Fuji: calças, meias técnicas, capas de chuva. Muito mais barato que Montbell para peças básicas.', addr:'Shinjuku / Shibuya', price:'low', tags:['outdoor','fuji prep','barato'], star:false },
+  ];
+  localStorage.setItem(SAVE_KEY, JSON.stringify(items));
+}
+
+/* ── COUNTDOWN ───────────────────────────────── */
+function updateCountdown() {
+  const now = new Date();
+  const msLeft = TRIP_DATE - now;
+  const daysLeft = Math.ceil(msLeft / 86400000);
+  const cdEl    = document.getElementById('cdDays');
+  const unitEl  = document.getElementById('cdUnit');
+  const mtbEl   = document.getElementById('mtbDays');
+
+  if (daysLeft > 0) {
+    cdEl.textContent = daysLeft;
+    cdEl.style.color = 'var(--c-carmine)';
+    unitEl.textContent = 'dias para a viagem';
+    if (mtbEl) mtbEl.textContent = daysLeft;
+  } else if (now <= TRIP_END) {
+    cdEl.textContent = '今';
+    cdEl.style.color = '#4A9070';
+    cdEl.style.fontSize = '40px';
+    unitEl.textContent = 'você está no Japão! 🎌';
+    if (mtbEl) { mtbEl.textContent = '今'; mtbEl.style.fontSize = '22px'; }
+  } else {
+    cdEl.textContent = '0';
+    cdEl.style.color = 'var(--ink-3)';
+    unitEl.textContent = 'a viagem já aconteceu ✈️';
+    if (mtbEl) mtbEl.textContent = '0';
+  }
+
+  // Progress bar: from Jan 1 2026 to trip date
+  const start = new Date('2026-01-01');
+  const total = TRIP_DATE - start;
+  const elapsed = now - start;
+  const pct = Math.min(100, Math.max(0, (elapsed / total) * 100));
+  document.getElementById('cdProgress').style.width = pct + '%';
+}
+
+/* ── VIEW NAVIGATION ────────────────────────── */
+const VIEW_TITLE = { cronograma:'Cronograma', lugares:'Lugares', gastronomia:'Gastronomia', compras:'Compras', bookings:'Confirmados' };
+
+function goView(view, trigger) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + view).classList.add('active');
+  document.querySelectorAll('.nav-btn, .bnav-item').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('[data-view="' + view + '"]').forEach(b => b.classList.add('active'));
+  document.getElementById('topbarTitle').textContent = VIEW_TITLE[view] || view;
+  curView = view;
+  const showFilter = view === 'lugares' || view === 'gastronomia';
+  document.getElementById('filterBar').style.display = showFilter ? 'flex' : 'none';
+  closeSidebar();
+}
+
+/* ── RENDER TIMELINE ────────────────────────── */
+const KANJI = ['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五'];
+
+function renderTimeline() {
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = '';
+  DAYS.forEach(d => {
+    const dayItems = items.filter(i => String(i.day) === String(d.n));
+    const ctag = CITY_TAG[d.city] || 'tag-tokyo';
+    const cname = CITY_NAME[d.city] || d.city;
+    const el = document.createElement('div');
+    el.className = 'day-block';
+    el.innerHTML = `
+      <div class="day-stamp">
+        <div class="day-circle${d.special?' special':''}">
+          <div class="day-n">${d.n}</div>
+          <div class="day-k">${KANJI[d.n-1]}</div>
+        </div>
+      </div>
+      <div class="day-content">
+        <div class="day-head">
+          <span class="day-date">${d.date} · ${d.label}</span>
+          <span class="day-sublabel">${d.jp}</span>
+          <span class="tag ${ctag} day-city">${cname}</span>
+        </div>
+        <div class="day-items" id="di-${d.n}">
+          ${dayItems.length === 0
+            ? `<div class="day-note-placeholder">${d.note}</div>`
+            : dayItems.map(i => dayItemHTML(i)).join('')
+          }
+        </div>
+        <button class="day-add" onclick="openAddDay(${d.n})">
+          <span>+</span> Adicionar ao dia ${d.n}
+        </button>
+      </div>`;
+    tl.appendChild(el);
+  });
+}
+
+function dayItemHTML(i) {
+  const tcat = TYPE_TAG[i.type] || 'tag-bairro';
+  return `
+    <div class="day-item" onclick="openDetail('${i.id}')" tabindex="0" role="button" aria-label="${i.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openDetail('${i.id}')">
+      <span class="day-item-ico">${EMOJI[i.type]||'📍'}</span>
+      <div class="day-item-body">
+        <div class="day-item-name">${i.name}</div>
+        ${i.jp ? `<div class="day-item-jp" lang="ja">${i.jp}</div>` : ''}
+        ${i.note ? `<div class="day-item-note">${i.note}</div>` : ''}
+        <div class="day-item-tags">
+          ${(i.tags||[]).map(t=>`<span class="tag ${tcat}">${t}</span>`).join('')}
+        </div>
+      </div>
+      <span class="day-item-star">${i.star?'⭐':''}</span>
+    </div>`;
+}
+
+/* ── RENDER LUGARES ─────────────────────────── */
+function renderLugares(f) {
+  const g = document.getElementById('grid-lugares');
+  const PLACE_TYPES = ['lugar','evento','templo','museu'];
+  const list = items.filter(i => PLACE_TYPES.includes(i.type) && (f==='all'||i.city===f));
+  document.getElementById('cnt-l').textContent = list.length;
+  g.innerHTML = list.length ? list.map(cardHTML).join('') : emptyHTML('📍','Nenhum lugar salvo ainda');
+}
+
+/* ── RENDER GASTRONOMIA ─────────────────────── */
+function renderGastronomia(f) {
+  const g = document.getElementById('grid-gastro');
+  const FOOD_TYPES = ['restaurante','cafe','bar'];
+  const list = items.filter(i => FOOD_TYPES.includes(i.type) && (f==='all'||i.city===f));
+  document.getElementById('cnt-g').textContent = list.length;
+  g.innerHTML = list.length ? list.map(cardHTML).join('') : emptyHTML('🍜','Nenhum restaurante salvo ainda');
+}
+
+function cardHTML(i) {
+  const ctag  = CITY_TAG[i.city]  || '';
+  const cname = CITY_NAME[i.city] || '';
+  const cbg   = CITY_BG[i.city]   || '#eee';
+  const tcat  = TYPE_TAG[i.type]  || 'tag-bairro';
+  const prStr = PRICE[i.price]    || '';
+  const hasPhoto = i.photo && i.photo.length > 0;
+  return `
+    <div class="place-card" onclick="openDetail('${i.id}')" tabindex="0" role="button" aria-label="${i.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openDetail('${i.id}')">
+      <div class="card-thumb" style="background:${cbg}">
+        ${hasPhoto
+          ? `<img class="card-thumb-img" src="${i.photo}" alt="${i.name}" loading="lazy">`
+          : `<span class="thumb-bg-emoji">${EMOJI[i.type]||'📍'}</span>`}
+        <div class="card-thumb-tags">
+          <span class="tag ${ctag}">${cname}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${i.name}${i.star?' ⭐':''}</div>
+        ${i.jp?`<div class="card-jp" lang="ja">${i.jp}</div>`:''}
+        ${i.note?`<div class="card-note">${i.note}</div>`:''}
+      </div>
+      <div class="card-footer">
+        ${(i.tags||[]).slice(0,2).map(t=>`<span class="tag ${tcat}">${t}</span>`).join('')}
+        ${prStr?`<span class="card-price">${prStr}</span>`:''}
+      </div>
+    </div>`;
+}
+
+/* ── RENDER COMPRAS ─────────────────────────── */
+function renderCompras() {
+  const body = document.getElementById('compras-body');
+  const compras = items.filter(i => i.type === 'compra');
+  if (!compras.length) { body.innerHTML = emptyHTML('🛍','Lista de compras vazia'); return; }
+
+  const byCity = {};
+  compras.forEach(c => { if (!byCity[c.city]) byCity[c.city] = []; byCity[c.city].push(c); });
+
+  body.innerHTML = Object.entries(byCity).map(([city, arr]) => `
+    <div class="shop-section">
+      <div class="shop-section-title">${CITY_NAME[city]||city}</div>
+      <div class="checklist">
+        ${arr.map(i => `
+          <div class="check-item${i.checked?' done':''}">
+            <button class="check-box-btn" onclick="toggleCheck('${i.id}')" aria-label="${i.checked?'Desmarcar':'Marcar'} ${i.name}" title="${i.checked?'Desmarcar':'Marcar como comprado'}">
+              <div class="check-box">${i.checked?'✓':''}</div>
+            </button>
+            <div class="check-tap-name" onclick="openDetail('${i.id}')" role="button" tabindex="0" aria-label="Ver detalhes: ${i.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openDetail('${i.id}')">
+              <div class="check-name">${i.name}${i.star?' ⭐':''}</div>
+              ${i.note?`<div class="check-sub">${i.note.slice(0,90)}${i.note.length>90?'…':''}</div>`:''}
+            </div>
+            ${i.addr?`<span class="check-store">${i.addr.split(',')[0]}</span>`:''}
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+/* ── RENDER BOOKINGS ────────────────────────── */
+const BOOKINGS_SEED = [
+  { ico:'🗻', name:'Yoshida Trail — Taxa de Subida', sub:'Monte Fuji, Yoshida 5th Station',       date:'08 Set 2026', type:'Ingresso',    conf:'162889RX6883', status:'confirmed' },
+  { ico:'⛺', name:'Kamaiwakan Mountain Hut',        sub:'Dormitório — 7ª estação, Yoshida Trail', date:'08 Set 2026', type:'Hospedagem',  conf:'B-KD9EAMD',   status:'confirmed' },
+  { ico:'✈️', name:'Emirates EK312',                 sub:'GRU → DXB → HND · Economy',             date:'06 Set 2026', type:'Voo ida',     conf:'EK312',       status:'confirmed' },
+  { ico:'✈️', name:'Emirates EK319',                 sub:'NRT → DXB → GRU · Economy',             date:'21 Set 2026', type:'Voo volta',   conf:'EK319',       status:'confirmed' },
+  { ico:'🏩', name:'UNPLAN Kagurazaka',              sub:'Hostel — Kagurazaka, Tokyo',             date:'06–10 Set',   type:'Hospedagem',  conf:'Confirmando…', status:'pending'  },
+];
+
+function renderBookings() {
+  const body = document.getElementById('bookings-body');
+  body.innerHTML = BOOKINGS_SEED.map(b => `
+    <div class="booking-card">
+      <div class="booking-ico">${b.ico}</div>
+      <div class="booking-body">
+        <div class="booking-name">${b.name}</div>
+        <div class="booking-sub">${b.sub}</div>
+        <div class="booking-metas">
+          <div class="booking-meta-item">
+            <div class="bml">Data</div>
+            <div class="bmv">${b.date}</div>
+          </div>
+          <div class="booking-meta-item">
+            <div class="bml">Tipo</div>
+            <div class="bmv">${b.type}</div>
+          </div>
+        </div>
+        <div class="booking-conf">
+          <span class="bc-label">Confirmação</span>
+          <span class="bc-code">${b.conf}</span>
+        </div>
+      </div>
+      <div class="booking-dot ${b.status}"></div>
+    </div>`).join('');
+}
+
+/* ── DETAIL MODAL ───────────────────────────── */
+function openDetail(id) {
+  const i = items.find(x => x.id === id);
+  if (!i) return;
+  curDetailId = id;
+  const ctag  = CITY_TAG[i.city]  || '';
+  const cname = CITY_NAME[i.city] || '';
+  const cbg   = CITY_BG[i.city]   || '#eee';
+  const prStr = PRICE[i.price]    || '';
+  const hero  = document.getElementById('dm-hero');
+
+  // Remove old image/overlay if present
+  hero.querySelectorAll('.detail-hero-img,.detail-hero-overlay').forEach(e=>e.remove());
+
+  if (i.photo) {
+    hero.style.background = 'transparent';
+    const img = document.createElement('img');
+    img.className = 'detail-hero-img';
+    img.src = i.photo;
+    img.alt = i.name;
+    const ov = document.createElement('div');
+    ov.className = 'detail-hero-overlay';
+    hero.prepend(ov);
+    hero.prepend(img);
+    // Tags/icon visible over image — already z-index:2 via CSS
+  } else {
+    hero.style.background = cbg;
+  }
+
+  document.getElementById('dm-ico').textContent  = i.photo ? '' : (EMOJI[i.type]||'📍');
+  document.getElementById('dm-name').textContent = i.name + (i.star?' ⭐':'');
+  const jpEl = document.getElementById('dm-jp');
+  jpEl.textContent = i.jp||'';
+  if (i.jp) jpEl.setAttribute('lang','ja'); else jpEl.removeAttribute('lang');
+  document.getElementById('dm-note').textContent = i.note||'';
+  document.getElementById('dm-hero-tags').innerHTML = `
+    <span class="tag ${ctag}">${cname}</span>
+    ${prStr?`<span class="tag" style="background:rgba(255,255,255,0.9);color:var(--ink)">${prStr}</span>`:''}`;
+  document.getElementById('dm-metas').innerHTML = [
+    i.day   ? `<div class="detail-meta-cell"><div class="dmc-l">Dia</div><div class="dmc-v">Dia ${i.day}</div></div>` : '',
+    i.addr  ? `<div class="detail-meta-cell"><div class="dmc-l">Localização</div><div class="dmc-v">${i.addr}</div></div>` : '',
+    (i.tags||[]).length ? `<div class="detail-meta-cell"><div class="dmc-l">Tags</div><div class="dmc-v">${i.tags.join(', ')}</div></div>` : '',
+  ].join('');
+  document.getElementById('detailOverlay').classList.add('open');
+}
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('open');
+  curDetailId = null;
+}
+
+/* ── EDIT / DELETE ──────────────────────────── */
+function editItem() {
+  if (!curDetailId) return;
+  const i = items.find(x => x.id === curDetailId);
+  if (!i) return;
+  closeDetail();
+
+  // Pre-fill form
+  curEditId = i.id;
+  curType   = i.type;
+  curPhoto  = i.photo || null;
+
+  document.getElementById('f-name').value  = i.name || '';
+  document.getElementById('f-jp').value    = i.jp   || '';
+  document.getElementById('f-city').value  = i.city || 'tokyo';
+  document.getElementById('f-day').value   = i.day  || '';
+  document.getElementById('f-note').value  = i.note || '';
+  document.getElementById('f-addr').value  = i.addr || '';
+  document.getElementById('f-price').value = i.price|| '';
+  document.getElementById('f-tags').value  = (i.tags||[]).join(', ');
+  document.getElementById('f-photo-url').value = (i.photo && !i.photo.startsWith('data:')) ? i.photo : '';
+
+  // Type picker
+  document.querySelectorAll('.type-opt').forEach(b => b.classList.remove('sel'));
+  const typeBtn = document.querySelector(`[data-type="${i.type}"]`);
+  if (typeBtn) typeBtn.classList.add('sel');
+
+  // Photo preview
+  if (i.photo) {
+    showPhotoPreview(i.photo);
+  } else {
+    hidePhotoPreview();
+  }
+
+  // Update modal title & button
+  document.querySelector('#addOverlay .modal-title').textContent = 'Editar item';
+  document.getElementById('saveBtn').textContent = 'Salvar alterações';
+
+  document.getElementById('addOverlay').classList.add('open');
+}
+
+function deleteItem() {
+  if (!curDetailId) return;
+  const i = items.find(x => x.id === curDetailId);
+  if (!i) return;
+  if (!confirm(`Deletar "${i.name}"?`)) return;
+  items = items.filter(x => x.id !== curDetailId);
+  save();
+  closeDetail();
+  renderAll();
+  toast(`"${i.name}" removido`);
+}
+
+/* ── ADD MODAL ──────────────────────────────── */
+function openAdd() {
+  addDay = null;
+  resetForm();
+  document.getElementById('addOverlay').classList.add('open');
+}
+function openAddDay(day) {
+  addDay = day;
+  resetForm();
+  document.getElementById('f-day').value = day;
+  document.getElementById('addOverlay').classList.add('open');
+}
+function closeAdd() {
+  document.getElementById('addOverlay').classList.remove('open');
+  curEditId = null;
+}
+
+function resetForm() {
+  ['f-name','f-jp','f-note','f-addr','f-tags','f-photo-url'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('f-price').value = '';
+  document.getElementById('f-city').value  = 'tokyo';
+  document.getElementById('f-day').value   = '';
+  document.getElementById('f-photo-file').value = '';
+  curType   = 'lugar';
+  curEditId = null;
+  curPhoto  = null;
+  hidePhotoPreview();
+  document.querySelectorAll('.type-opt').forEach(b => b.classList.remove('sel'));
+  document.querySelector('[data-type="lugar"]').classList.add('sel');
+  document.querySelector('#addOverlay .modal-title').textContent = 'Adicionar item';
+  document.getElementById('saveBtn').textContent = 'Salvar item';
+}
+
+function pickType(btn) {
+  document.querySelectorAll('.type-opt').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  curType = btn.dataset.type;
+}
+
+/* ── PHOTO HANDLING ─────────────────────────── */
+function handlePhotoFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  // Warn if >2MB
+  if (file.size > 2 * 1024 * 1024) {
+    toast('Foto grande — pode demorar para salvar');
+  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    curPhoto = e.target.result;
+    document.getElementById('f-photo-url').value = '';
+    showPhotoPreview(curPhoto);
+  };
+  reader.readAsDataURL(file);
+}
+
+function handlePhotoUrl(val) {
+  const url = val.trim();
+  if (url) {
+    curPhoto = url;
+    showPhotoPreview(url);
+  } else {
+    curPhoto = null;
+    hidePhotoPreview();
+  }
+}
+
+function showPhotoPreview(src) {
+  document.getElementById('photoPreviewImg').src   = src;
+  document.getElementById('photoPreviewWrap').style.display = 'block';
+  document.getElementById('photoAreaDefault').style.display = 'none';
+  // Hide the file input overlay while preview is showing
+  document.querySelector('#photoArea input[type="file"]').style.zIndex = '-1';
+}
+
+function hidePhotoPreview() {
+  document.getElementById('photoPreviewImg').src   = '';
+  document.getElementById('photoPreviewWrap').style.display = 'none';
+  document.getElementById('photoAreaDefault').style.display = '';
+  document.querySelector('#photoArea input[type="file"]').style.zIndex = '2';
+}
+
+function clearPhoto(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  curPhoto = null;
+  document.getElementById('f-photo-url').value = '';
+  document.getElementById('f-photo-file').value = '';
+  hidePhotoPreview();
+}
+
+function saveItem() {
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) { toast('Nome é obrigatório'); return; }
+  const tagsRaw = document.getElementById('f-tags').value.trim();
+
+  if (curEditId) {
+    // UPDATE existing
+    const idx = items.findIndex(x => x.id === curEditId);
+    if (idx === -1) { toast('Item não encontrado'); return; }
+    const existing = items[idx];
+    items[idx] = {
+      ...existing,
+      type:  curType,
+      name,
+      jp:    document.getElementById('f-jp').value.trim(),
+      city:  document.getElementById('f-city').value,
+      day:   document.getElementById('f-day').value,
+      note:  document.getElementById('f-note').value.trim(),
+      addr:  document.getElementById('f-addr').value.trim(),
+      price: document.getElementById('f-price').value,
+      tags:  tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [],
+      photo: curPhoto || existing.photo || null,
+    };
+    save();
+    closeAdd();
+    renderAll();
+    toast(`"${name}" atualizado ✓`);
+  } else {
+    // NEW item
+    const item = {
+      id:      'i' + Date.now(),
+      type:    curType,
+      name,
+      jp:      document.getElementById('f-jp').value.trim(),
+      city:    document.getElementById('f-city').value,
+      day:     document.getElementById('f-day').value,
+      note:    document.getElementById('f-note').value.trim(),
+      addr:    document.getElementById('f-addr').value.trim(),
+      price:   document.getElementById('f-price').value,
+      tags:    tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [],
+      photo:   curPhoto || null,
+      star:    false,
+      checked: false,
+    };
+    items.push(item);
+    save();
+    closeAdd();
+    renderAll();
+    toast(`"${name}" salvo ✓`);
+  }
+}
+
+function toggleCheck(id) {
+  const i = items.find(x => x.id === id);
+  if (i) { i.checked = !i.checked; save(); renderCompras(); }
+}
+
+/* ── FILTER ─────────────────────────────────── */
+function setFilter(btn, city) {
+  document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  curFilter = city;
+  if (curView==='lugares')     renderLugares(city);
+  if (curView==='gastronomia') renderGastronomia(city);
+}
+
+/* ── COUNTS ─────────────────────────────────── */
+function updateCounts() {
+  document.getElementById('nc-lugares').textContent  = items.filter(i=>['lugar','evento','templo','museu'].includes(i.type)).length;
+  document.getElementById('nc-gastro').textContent   = items.filter(i=>['restaurante','cafe','bar'].includes(i.type)).length;
+  document.getElementById('nc-compras').textContent  = items.filter(i=>i.type==='compra').length;
+}
+
+/* ── SIDEBAR ────────────────────────────────── */
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+/* ── HELPERS ────────────────────────────────── */
+function save() { localStorage.setItem(SAVE_KEY, JSON.stringify(items)); }
+
+function emptyHTML(ico, txt) {
+  return `<div class="empty"><div class="ei">${ico}</div><div class="et">${txt}</div></div>`;
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* ── CLOSE ON OVERLAY CLICK ─────────────────── */
+document.getElementById('addOverlay').addEventListener('click', e => { if(e.target.id==='addOverlay') closeAdd(); });
+document.getElementById('detailOverlay').addEventListener('click', e => { if(e.target.id==='detailOverlay') closeDetail(); });
+
+/* ── ESC KEY + FOCUS MANAGEMENT ─────────────── */
+let _prevFocus = null;
+
+function trapFocus(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  const focusable = overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (focusable.length) focusable[0].focus();
+  overlay._onKeydown = function(e) {
+    if (e.key === 'Escape') {
+      if (overlayId === 'addOverlay') closeAdd();
+      else closeDetail();
+      return;
+    }
+    if (e.key !== 'Tab') return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+  };
+  overlay.addEventListener('keydown', overlay._onKeydown);
+}
+
+function releaseFocus(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  if (overlay._onKeydown) { overlay.removeEventListener('keydown', overlay._onKeydown); delete overlay._onKeydown; }
+  if (_prevFocus) { _prevFocus.focus(); _prevFocus = null; }
+}
+
+// Patch open/close to save focus + trap
+const _origOpenAdd = openAdd;
+openAdd = function() { _prevFocus = document.activeElement; _origOpenAdd(); requestAnimationFrame(() => trapFocus('addOverlay')); };
+
+const _origOpenAddDay = openAddDay;
+openAddDay = function(day) { _prevFocus = document.activeElement; _origOpenAddDay(day); requestAnimationFrame(() => trapFocus('addOverlay')); };
+
+const _origCloseAdd = closeAdd;
+closeAdd = function() { _origCloseAdd(); releaseFocus('addOverlay'); };
+
+const _origOpenDetail = openDetail;
+openDetail = function(id) { _prevFocus = document.activeElement; _origOpenDetail(id); requestAnimationFrame(() => trapFocus('detailOverlay')); };
+
+const _origCloseDetail = closeDetail;
+closeDetail = function() { _origCloseDetail(); releaseFocus('detailOverlay'); };
+
+/* ── RENDER ALL ─────────────────────────────── */
+function renderAll() {
+  renderTimeline();
+  renderLugares(curFilter);
+  renderGastronomia(curFilter);
+  renderCompras();
+  renderBookings();
+  updateCounts();
+}
+
+/* ── INIT ───────────────────────────────────── */
+updateCountdown();
+renderAll();
+goView('cronograma', null);
+</script>
+</body>
+</html>
